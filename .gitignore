@@ -1,23 +1,22 @@
-# System files
-.DS_Store
-Thumbs.db
-
-# Editor directories and files
-.idea/
-.vscode/
-*.swp
-*.swo
-
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
+# Dependencies
+node_modules/
+dist/
 
 # Environment
 .env
-.venv/
-venv/
-ENV/
+.env.local
+
+# Build files
+*.zip
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
 
 # Logs
 *.log
+npm-debug.log*
