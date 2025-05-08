@@ -29,7 +29,7 @@ A modern, responsive portfolio website for BaddBeatz Production featuring AI-dri
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/YOUR_USERNAME/baddbeatz-portfolio.git
+git clone https://github.com/CrzyHAX91/baddbeatz-portfolio.git
 cd baddbeatz-portfolio
 ```
 
