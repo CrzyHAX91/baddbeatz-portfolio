@@ -1,15 +1,15 @@
-<!DOCTYPE html>
+0<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>BaddBeatz Production & DJ Portfolio</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <!-- Custom Styles -->
     <style>
         /* Additional Animations */
@@ -53,7 +53,8 @@
         }
 
         /* Mobile menu button hover effect */
-        .mobile-menu-button:hover, .mobile-menu-close:hover {
+        .mobile-menu-button:hover,
+        .mobile-menu-close:hover {
             transform: scale(1.05);
             box-shadow: 0 0 20px rgba(255, 0, 85, 0.3);
         }
@@ -71,34 +72,57 @@
             --dark-bg: #121212;
             --darker-bg: #0a0a0a;
         }
-        
+
         /* Animations */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-        
+
         @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
         }
 
         @keyframes gradientFlow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
         }
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: "Roboto", sans-serif;
             background-color: var(--dark-bg);
             color: white;
         }
         .orbitron {
-            font-family: 'Orbitron', sans-serif;
+            font-family: "Orbitron", sans-serif;
         }
         .gradient-text {
-            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--primary-color));
+            background: linear-gradient(
+                45deg,
+                var(--primary-color),
+                var(--secondary-color),
+                var(--primary-color)
+            );
             background-size: 200% auto;
             -webkit-background-clip: text;
             background-clip: text;
@@ -116,41 +140,143 @@
     </style>
 </head>
 <body>
-    <div id="auth-container" class="min-h-screen flex items-center justify-center bg-[var(--dark-bg)]">
-        <div class="w-full max-w-md p-8 bg-black/70 rounded-xl shadow-lg">
-            <h2 class="text-3xl font-bold mb-6 text-center text-white">Sign In to BaddBeatz</h2>
+    <div
+        id="auth-container"
+        class="min-h-screen flex items-center justify-center bg-[var(--dark-bg)]"
+        role="main"
+        aria-label="Authentication container"
+    >
+        <div
+            class="w-full max-w-md p-8 bg-black/70 rounded-xl shadow-lg"
+            role="region"
+            aria-labelledby="auth-heading"
+        >
+            <h2
+                id="auth-heading"
+                class="text-3xl font-bold mb-6 text-center text-white"
+            >
+                Sign In to BaddBeatz
+            </h2>
             <div id="firebaseui-auth-container"></div>
-            <div id="loader" class="text-center text-gray-400 mt-4">Loading...</div>
+            <div id="loader" class="text-center text-gray-400 mt-4" aria-live="polite">
+                Loading...
+            </div>
         </div>
     </div>
-    <div id="app-container" style="display:none;">
+    <div
+        id="app-container"
+        style="display: none"
+        role="main"
+        aria-label="Application container"
+    >
         <!-- Navigation -->
-        <nav class="fixed w-full bg-black/80 backdrop-blur-md z-50">
+        <nav
+            class="fixed w-full bg-black/80 backdrop-blur-md z-50"
+            role="navigation"
+            aria-label="Primary"
+        >
             <div class="container mx-auto px-4 py-3">
                 <div class="flex justify-between items-center">
                     <div class="flex items-center">
-                        <h1 class="text-2xl orbitron font-bold gradient-text">BaddBeatz</h1>
+                        <h1
+                            class="text-2xl orbitron font-bold gradient-text"
+                            tabindex="0"
+                        >
+                            BaddBeatz
+                        </h1>
                     </div>
-                    <div class="hidden md:flex space-x-6">
-                        <a href="#home" class="text-white hover:text-[var(--primary-color)] transition-colors">Home</a>
-                        <a href="#music" class="text-white hover:text-[var(--primary-color)] transition-colors">Music</a>
-                        <a href="#content" class="text-white hover:text-[var(--primary-color)] transition-colors">Content</a>
-                        <a href="#dashboard" class="text-white hover:text-[var(--primary-color)] transition-colors">Dashboard</a>
+                    <div
+                        class="hidden md:flex space-x-6"
+                        role="menubar"
+                        aria-label="Main menu"
+                    >
+                        <a
+                            href="#home"
+                            class="text-white hover:text-[var(--primary-color)] transition-colors"
+                            role="menuitem"
+                            tabindex="0"
+                            >Home</a
+                        >
+                        <a
+                            href="#music"
+                            class="text-white hover:text-[var(--primary-color)] transition-colors"
+                            role="menuitem"
+                            tabindex="0"
+                            >Music</a
+                        >
+                        <a
+                            href="#content"
+                            class="text-white hover:text-[var(--primary-color)] transition-colors"
+                            role="menuitem"
+                            tabindex="0"
+                            >Content</a
+                        >
+                        <a
+                            href="#dashboard"
+                            class="text-white hover:text-[var(--primary-color)] transition-colors"
+                            role="menuitem"
+                            tabindex="0"
+                            >Dashboard</a
+                        >
                     </div>
                     <div class="block md:hidden">
-                        <button class="mobile-menu-button fixed top-6 right-6 z-[60] text-white p-4 hover:text-[var(--primary-color)] transition-all duration-300 bg-[var(--primary-color)]/20 hover:bg-[var(--primary-color)]/30 backdrop-blur-md rounded-xl shadow-lg border border-white/10">
+                        <button
+                            class="mobile-menu-button fixed top-6 right-6 z-[60] text-white p-4 hover:text-[var(--primary-color)] transition-all duration-300 bg-[var(--primary-color)]/20 hover:bg-[var(--primary-color)]/30 backdrop-blur-md rounded-xl shadow-lg border border-white/10"
+                            aria-label="Open mobile menu"
+                            aria-expanded="false"
+                            aria-controls="mobile-menu"
+                        >
                             <i class="fas fa-bars text-2xl"></i>
                         </button>
                         <!-- Mobile Menu -->
-                        <div class="mobile-menu fixed inset-0 bg-gradient-to-b from-black/98 to-black/95 z-50 backdrop-blur-lg">
-                            <div class="mobile-menu-content relative flex flex-col items-center justify-center min-h-screen space-y-8 p-4">
-                                <button class="mobile-menu-close absolute top-6 right-6 text-white p-4 hover:text-[var(--primary-color)] transition-all duration-300 bg-[var(--primary-color)]/20 hover:bg-[var(--primary-color)]/30 backdrop-blur-md rounded-xl shadow-lg border border-white/10">
+                        <div
+                            id="mobile-menu"
+                            class="mobile-menu fixed inset-0 bg-gradient-to-b from-black/98 to-black/95 z-50 backdrop-blur-lg"
+                            role="dialog"
+                            aria-modal="true"
+                            aria-labelledby="mobile-menu-label"
+                            tabindex="-1"
+                        >
+                            <div
+                                class="mobile-menu-content relative flex flex-col items-center justify-center min-h-screen space-y-8 p-4"
+                            >
+                                <button
+                                    class="mobile-menu-close absolute top-6 right-6 text-white p-4 hover:text-[var(--primary-color)] transition-all duration-300 bg-[var(--primary-color)]/20 hover:bg-[var(--primary-color)]/30 backdrop-blur-md rounded-xl shadow-lg border border-white/10"
+                                    aria-label="Close mobile menu"
+                                >
                                     <i class="fas fa-times text-xl"></i>
                                 </button>
-                                <a href="#home" class="mobile-link text-white text-2xl font-semibold hover:text-[var(--primary-color)] transition-all duration-300 hover:scale-110">Home</a>
-                                <a href="#music" class="mobile-link text-white text-2xl font-semibold hover:text-[var(--primary-color)] transition-all duration-300 hover:scale-110">Music</a>
-                                <a href="#content" class="mobile-link text-white text-2xl font-semibold hover:text-[var(--primary-color)] transition-all duration-300 hover:scale-110">Content</a>
-                                <a href="#dashboard" class="mobile-link text-white text-2xl font-semibold hover:text-[var(--primary-color)] transition-all duration-300 hover:scale-110">Dashboard</a>
+                                <h2 id="mobile-menu-label" class="sr-only">
+                                    Mobile Menu
+                                </h2>
+                                <a
+                                    href="#home"
+                                    class="mobile-link text-white text-2xl font-semibold hover:text-[var(--primary-color)] transition-all duration-300 hover:scale-110"
+                                    role="menuitem"
+                                    tabindex="0"
+                                    >Home</a
+                                >
+                                <a
+                                    href="#music"
+                                    class="mobile-link text-white text-2xl font-semibold hover:text-[var(--primary-color)] transition-all duration-300 hover:scale-110"
+                                    role="menuitem"
+                                    tabindex="0"
+                                    >Music</a
+                                >
+                                <a
+                                    href="#content"
+                                    class="mobile-link text-white text-2xl font-semibold hover:text-[var(--primary-color)] transition-all duration-300 hover:scale-110"
+                                    role="menuitem"
+                                    tabindex="0"
+                                    >Content</a
+                                >
+                                <a
+                                    href="#dashboard"
+                                    class="mobile-link text-white text-2xl font-semibold hover:text-[var(--primary-color)] transition-all duration-300 hover:scale-110"
+                                    role="menuitem"
+                                    tabindex="0"
+                                    >Dashboard</a
+                                >
                             </div>
                         </div>
                     </div>
@@ -158,65 +284,125 @@
             </div>
         </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden bg-black">
-        <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover opacity-60">
-            <source src="https://cdn.videvo.net/videvo_files/video/free/2019-07/small_watermarked/190703_01_Dark_techno_4k_001_preview.webm" type="video/webm" />
-            <source src="https://cdn.videvo.net/videvo_files/video/free/2019-07/small_watermarked/190703_01_Dark_techno_4k_001_preview.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-        </video>
-        <div class="absolute inset-0 bg-gradient-to-b from-black/70 to-black/90"></div>
-        <div class="container mx-auto px-4 z-10" style="animation: fadeIn 1.5s ease-out">
-            <div class="text-center max-w-4xl mx-auto">
-                <h1 class="text-5xl md:text-7xl lg:text-8xl orbitron font-extrabold mb-6 gradient-text glow drop-shadow-lg">
-                    Welcome to your next phase of life
-                </h1>
-                <p class="text-2xl md:text-3xl mb-10 text-gray-300 drop-shadow-md">
-                    Experience the power of AI-driven music production
-                </p>
-                <button class="generate-track bg-[var(--primary-color)] hover:bg-[var(--primary-color)]/90 text-white px-10 py-4 rounded-full text-xl font-semibold transition-all transform hover:scale-110 shadow-lg shadow-[var(--primary-color)]/50" style="animation: pulse 2.5s infinite">
-                    Get Started
-                </button>
+        <!-- Hero Section -->
+        <section
+            id="home"
+            class="min-h-screen flex items-center justify-center relative overflow-hidden bg-black"
+        >
+            <video
+                autoplay
+                muted
+                loop
+                playsinline
+                class="absolute inset-0 w-full h-full object-cover opacity-60"
+                loading="lazy"
+            >
+                <source
+                    src="https://cdn.videvo.net/videvo_files/video/free/2019-07/small_watermarked/190703_01_Dark_techno_4k_001_preview.webm"
+                    type="video/webm"
+                />
+                <source
+                    src="https://cdn.videvo.net/videvo_files/video/free/2019-07/small_watermarked/190703_01_Dark_techno_4k_001_preview.mp4"
+                    type="video/mp4"
+                />
+                Your browser does not support the video tag.
+            </video>
+            <div class="absolute inset-0 bg-gradient-to-b from-black/70 to-black/90"></div>
+            <div
+                class="container mx-auto px-4 z-10"
+                style="animation: fadeIn 1.5s ease-out"
+            >
+                <div class="text-center max-w-4xl mx-auto">
+                    <h1
+                        class="text-5xl md:text-7xl lg:text-8xl orbitron font-extrabold mb-6 gradient-text glow drop-shadow-lg"
+                    >
+                        Welcome to your next phase of life
+                    </h1>
+                    <p
+                        class="text-2xl md:text-3xl mb-10 text-gray-300 drop-shadow-md"
+                    >
+                        Experience the power of AI-driven music production
+                    </p>
+                    <button
+                        class="generate-track bg-[var(--primary-color)] hover:bg-[var(--primary-color)]/90 text-white px-10 py-4 rounded-full text-xl font-semibold transition-all transform hover:scale-110 shadow-lg shadow-[var(--primary-color)]/50"
+                        style="animation: pulse 2.5s infinite"
+                    >
+                        Get Started
+                    </button>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
     <!-- Music Generation Section -->
-    <section id="music" class="py-20 bg-gradient-to-b from-[var(--darker-bg)] to-[var(--dark-bg)]">
+    <section
+        id="music"
+        class="py-20 bg-gradient-to-b from-[var(--darker-bg)] to-[var(--dark-bg)]"
+    >
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl md:text-5xl orbitron font-extrabold mb-12 text-center gradient-text drop-shadow-lg">Music Generation</h2>
+            <h2
+                class="text-4xl md:text-5xl orbitron font-extrabold mb-12 text-center gradient-text drop-shadow-lg"
+            >
+                Music Generation
+            </h2>
+            <div id="music-loading" class="hidden text-center text-[var(--primary-color)] font-semibold mb-6">
+                Loading music generation...
+            </div>
             <div class="grid md:grid-cols-2 gap-10">
-                <div class="card rounded-2xl p-8 shadow-lg bg-black/40 backdrop-blur-md border border-white/10 hover:shadow-[0_0_20px_var(--primary-color)] transition-shadow duration-500">
+                <div
+                    class="card rounded-2xl p-8 shadow-lg bg-black/40 backdrop-blur-md border border-white/10 hover:shadow-[0_0_20px_var(--primary-color)] transition-shadow duration-500"
+                >
                     <h3 class="text-2xl font-semibold mb-6">Style Configuration</h3>
                     <div class="space-y-6 text-lg">
                         <div class="flex justify-between items-center">
                             <span>Style:</span>
-                            <span class="text-[var(--primary-color)] font-semibold">Techno</span>
+                            <span class="text-[var(--primary-color)] font-semibold"
+                                >Techno</span
+                            >
                         </div>
                         <div class="flex justify-between items-center">
                             <span>BPM:</span>
-                            <span class="text-[var(--primary-color)] font-semibold">138</span>
+                            <span class="text-[var(--primary-color)] font-semibold"
+                                >138</span
+                            >
                         </div>
                         <div class="flex justify-between items-center">
                             <span>Mood:</span>
-                            <span class="text-[var(--primary-color)] font-semibold">Dark</span>
+                            <span class="text-[var(--primary-color)] font-semibold"
+                                >Dark</span
+                            >
                         </div>
                     </div>
                 </div>
-                <div class="card rounded-2xl p-8 shadow-lg bg-black/40 backdrop-blur-md border border-white/10 hover:shadow-[0_0_20px_var(--primary-color)] transition-shadow duration-500">
+                <div
+                    class="card rounded-2xl p-8 shadow-lg bg-black/40 backdrop-blur-md border border-white/10 hover:shadow-[0_0_20px_var(--primary-color)] transition-shadow duration-500"
+                >
                     <h3 class="text-2xl font-semibold mb-6">Controls</h3>
                     <div class="space-y-6">
-                        <button class="w-full bg-[var(--primary-color)] hover:bg-[var(--primary-color)]/90 text-white px-8 py-4 rounded-xl text-xl font-semibold transition-all transform hover:scale-110 shadow-lg shadow-[var(--primary-color)]/60">
+                        <button
+                            id="generate-track-btn"
+                            class="w-full bg-[var(--primary-color)] hover:bg-[var(--primary-color)]/90 text-white px-8 py-4 rounded-xl text-xl font-semibold transition-all transform hover:scale-110 shadow-lg shadow-[var(--primary-color)]/60"
+                            aria-live="polite"
+                            aria-busy="false"
+                            aria-label="Generate Track"
+                        >
                             Generate Track
                         </button>
+                        <div id="generate-track-loading" class="hidden mt-2 text-center text-[var(--primary-color)] font-semibold">Generating track...</div>
+                        <div id="generate-track-success" class="hidden mt-2 text-center text-green-500 font-semibold">Track generated successfully!</div>
                         <div class="flex justify-center space-x-6">
-                            <button class="p-4 bg-white/10 rounded-full hover:bg-white/20 transition-colors shadow-md shadow-black/50">
+                            <button
+                                class="p-4 bg-white/10 rounded-full hover:bg-white/20 transition-colors shadow-md shadow-black/50"
+                            >
                                 <i class="fas fa-play text-xl"></i>
                             </button>
-                            <button class="p-4 bg-white/10 rounded-full hover:bg-white/20 transition-colors shadow-md shadow-black/50">
+                            <button
+                                class="p-4 bg-white/10 rounded-full hover:bg-white/20 transition-colors shadow-md shadow-black/50"
+                            >
                                 <i class="fas fa-pause text-xl"></i>
                             </button>
-                            <button class="p-4 bg-white/10 rounded-full hover:bg-white/20 transition-colors shadow-md shadow-black/50">
+                            <button
+                                class="p-4 bg-white/10 rounded-full hover:bg-white/20 transition-colors shadow-md shadow-black/50"
+                            >
                                 <i class="fas fa-stop text-xl"></i>
                             </button>
                         </div>
@@ -226,191 +412,177 @@
         </div>
     </section>
 
-    <!-- Content Generation Section -->
-    <section id="content" class="py-20 bg-gradient-to-b from-[var(--dark-bg)] to-[var(--darker-bg)]">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl md:text-5xl orbitron font-extrabold mb-12 text-center gradient-text drop-shadow-lg">Content Generation</h2>
-            <div class="grid md:grid-cols-2 gap-10">
-                <div class="card rounded-2xl p-8 shadow-lg bg-black/40 backdrop-blur-md border border-white/10 hover:shadow-[0_0_20px_var(--primary-color)] transition-shadow duration-500">
-                    <h3 class="text-2xl font-semibold mb-6">Features</h3>
-                    <div class="space-y-6 text-lg">
-                        <label class="flex items-center space-x-4 cursor-pointer">
-                            <input type="checkbox" class="form-checkbox h-6 w-6 text-[var(--primary-color)] accent-[var(--primary-color)]">
-                            <span>Smart Recycling</span>
-                        </label>
-                        <label class="flex items-center space-x-4 cursor-pointer">
-                            <input type="checkbox" class="form-checkbox h-6 w-6 text-[var(--primary-color)] accent-[var(--primary-color)]">
-                            <span>A/B Testing</span>
-                        </label>
-                        <label class="flex items-center space-x-4 cursor-pointer">
-                            <input type="checkbox" class="form-checkbox h-6 w-6 text-[var(--primary-color)] accent-[var(--primary-color)]">
-                            <span>TrendRadar</span>
-                        </label>
+        <!-- Content Generation Section -->
+        <section
+            id="content"
+            class="py-20 bg-gradient-to-b from-[var(--dark-bg)] to-[var(--darker-bg)]"
+        >
+            <div class="container mx-auto px-4">
+                <h2
+                    class="text-4xl md:text-5xl orbitron font-extrabold mb-12 text-center gradient-text drop-shadow-lg"
+                >
+                    Content Generation
+                </h2>
+                <div id="content-loading" class="hidden text-center text-[var(--primary-color)] font-semibold mb-6">
+                    Loading content generation...
+                </div>
+                <div class="grid md:grid-cols-2 gap-10">
+                    <div
+                        class="card rounded-2xl p-8 shadow-lg bg-black/40 backdrop-blur-md border border-white/10 hover:shadow-[0_0_20px_var(--primary-color)] transition-shadow duration-500"
+                    >
+                        <h3 class="text-2xl font-semibold mb-6">Features</h3>
+                        <div class="space-y-6 text-lg">
+                            <label
+                                class="flex items-center space-x-4 cursor-pointer"
+                            >
+                                <input
+                                    type="checkbox"
+                                    class="form-checkbox h-6 w-6 text-[var(--primary-color)] accent-[var(--primary-color)]"
+                                />
+                                <span>Smart Recycling</span>
+                            </label>
+                            <label
+                                class="flex items-center space-x-4 cursor-pointer"
+                            >
+                                <input
+                                    type="checkbox"
+                                    class="form-checkbox h-6 w-6 text-[var(--primary-color)] accent-[var(--primary-color)]"
+                                />
+                                <span>A/B Testing</span>
+                            </label>
+                            <label
+                                class="flex items-center space-x-4 cursor-pointer"
+                            >
+                                <input
+                                    type="checkbox"
+                                    class="form-checkbox h-6 w-6 text-[var(--primary-color)] accent-[var(--primary-color)]"
+                                />
+                                <span>TrendRadar</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div
+                        class="card rounded-2xl p-8 shadow-lg bg-black/40 backdrop-blur-md border border-white/10 hover:shadow-[0_0_20px_var(--primary-color)] transition-shadow duration-500"
+                    >
+                        <h3 class="text-2xl font-semibold mb-6">Tags System</h3>
+                        <div class="flex flex-wrap gap-3 text-sm">
+                            <span
+                                class="px-4 py-2 bg-[var(--primary-color)]/20 rounded-full cursor-pointer hover:bg-[var(--primary-color)]/40 transition-colors"
+                                >#Techno</span
+                            >
+                            <span
+                                class="px-4 py-2 bg-[var(--primary-color)]/20 rounded-full cursor-pointer hover:bg-[var(--primary-color)]/40 transition-colors"
+                                >#DarkTechno</span
+                            >
+                            <span
+                                class="px-4 py-2 bg-[var(--primary-color)]/20 rounded-full cursor-pointer hover:bg-[var(--primary-color)]/40 transition-colors"
+                                >#HardBeats</span
+                            >
+                            <span
+                                class="px-4 py-2 bg-[var(--primary-color)]/20 rounded-full cursor-pointer hover:bg-[var(--primary-color)]/40 transition-colors"
+                                >#BaddBeatz</span
+                            >
+                            <span
+                                class="px-4 py-2 bg-[var(--primary-color)]/20 rounded-full cursor-pointer hover:bg-[var(--primary-color)]/40 transition-colors"
+                                >#TheBadGuyHimself</span
+                            >
+                            <span
+                                class="px-4 py-2 bg-[var(--primary-color)]/20 rounded-full cursor-pointer hover:bg-[var(--primary-color)]/40 transition-colors"
+                                >#AIForMusic</span
+                            >
+                        </div>
                     </div>
                 </div>
-                <div class="card rounded-2xl p-8 shadow-lg bg-black/40 backdrop-blur-md border border-white/10 hover:shadow-[0_0_20px_var(--primary-color)] transition-shadow duration-500">
-                    <h3 class="text-2xl font-semibold mb-6">Tags System</h3>
-                    <div class="flex flex-wrap gap-3 text-sm">
-                        <span class="px-4 py-2 bg-[var(--primary-color)]/20 rounded-full cursor-pointer hover:bg-[var(--primary-color)]/40 transition-colors">#Techno</span>
-                        <span class="px-4 py-2 bg-[var(--primary-color)]/20 rounded-full cursor-pointer hover:bg-[var(--primary-color)]/40 transition-colors">#DarkTechno</span>
-                        <span class="px-4 py-2 bg-[var(--primary-color)]/20 rounded-full cursor-pointer hover:bg-[var(--primary-color)]/40 transition-colors">#HardBeats</span>
-                        <span class="px-4 py-2 bg-[var(--primary-color)]/20 rounded-full cursor-pointer hover:bg-[var(--primary-color)]/40 transition-colors">#BaddBeatz</span>
-                        <span class="px-4 py-2 bg-[var(--primary-color)]/20 rounded-full cursor-pointer hover:bg-[var(--primary-color)]/40 transition-colors">#TheBadGuyHimself</span>
-                        <span class="px-4 py-2 bg-[var(--primary-color)]/20 rounded-full cursor-pointer hover:bg-[var(--primary-color)]/40 transition-colors">#AIForMusic</span>
+            </div>
+        </section>
+
+        <!-- Dashboard Section -->
+        <section
+            id="dashboard"
+            class="py-20 bg-gradient-to-b from-[var(--darker-bg)] to-[var(--dark-bg)]"
+        >
+            <div class="container mx-auto px-4">
+                <h2
+                    class="text-4xl md:text-5xl orbitron font-extrabold mb-12 text-center gradient-text drop-shadow-lg"
+                >
+                    User Dashboard
+                </h2>
+                <div
+                    class="card rounded-2xl p-8 shadow-lg bg-black/40 backdrop-blur-md border border-white/10 hover:shadow-[0_0_20px_var(--primary-color)] transition-shadow duration-500 max-w-3xl mx-auto"
+                >
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-semibold mb-6">Social Media Post</h3>
+                        <textarea
+                            class="w-full bg-black/50 border border-white/20 rounded-xl p-6 text-white text-lg resize-y min-h-[120px] placeholder:text-gray-400 placeholder:italic shadow-inner shadow-black/50"
+                            rows="5"
+                            placeholder="Enter the void with this banger. 💣🖤 AI generated, human approved. Link in bio – powered by #TheBadGuyHimself"
+                        ></textarea>
+                    </div>
+                    <div class="flex justify-end">
+                        <button
+                            id="post-now-btn"
+                            class="bg-[var(--primary-color)] hover:bg-[var(--primary-color)]/90 text-white px-8 py-3 rounded-xl text-lg font-semibold transition-all transform hover:scale-110 shadow-lg shadow-[var(--primary-color)]/60"
+                            aria-live="polite"
+                            aria-busy="false"
+                            aria-label="Post Now"
+                        >
+                            Post Now
+                        </button>
+                    </div>
+                    <div id="post-now-success" class="hidden mt-2 text-green-500 font-semibold text-right">
+                        Post successful!
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Dashboard Section -->
-    <section id="dashboard" class="py-20 bg-gradient-to-b from-[var(--darker-bg)] to-[var(--dark-bg)]">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl md:text-5xl orbitron font-extrabold mb-12 text-center gradient-text drop-shadow-lg">User Dashboard</h2>
-            <div class="card rounded-2xl p-8 shadow-lg bg-black/40 backdrop-blur-md border border-white/10 hover:shadow-[0_0_20px_var(--primary-color)] transition-shadow duration-500 max-w-3xl mx-auto">
-                <div class="mb-8">
-                    <h3 class="text-2xl font-semibold mb-6">Social Media Post</h3>
-                    <textarea
-                        class="w-full bg-black/50 border border-white/20 rounded-xl p-6 text-white text-lg resize-y min-h-[120px] placeholder:text-gray-400 placeholder:italic shadow-inner shadow-black/50"
-                        rows="5"
-                        placeholder="Enter the void with this banger. 💣🖤 AI generated, human approved. Link in bio – powered by #TheBadGuyHimself"
-                    ></textarea>
+        <!-- Footer -->
+        <footer class="bg-black py-8">
+            <div class="container mx-auto px-4">
+                <div
+                    class="flex flex-col md:flex-row justify-between items-center"
+                >
+                    <div class="mb-4 md:mb-0">
+                        <h3 class="orbitron font-bold gradient-text">BaddBeatz</h3>
+                    </div>
+                    <div class="flex space-x-6">
+                        <a
+                            href="https://instagram.com/baddbeatz"
+                            target="_blank"
+                            class="text-white hover:text-[var(--primary-color)] transition-all transform hover:scale-110"
+                        >
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a
+                            href="https://twitter.com/baddbeatz"
+                            target="_blank"
+                            class="text-white hover:text-[var(--primary-color)] transition-all transform hover:scale-110"
+                        >
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a
+                            href="https://youtube.com/baddbeatz"
+                            target="_blank"
+                            class="text-white hover:text-[var(--primary-color)] transition-all transform hover:scale-110"
+                        >
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                        <a
+                            href="https://soundcloud.com/baddbeatz"
+                            target="_blank"
+                            class="text-white hover:text-[var(--primary-color)] transition-all transform hover:scale-110"
+                        >
+                            <i class="fab fa-soundcloud text-xl"></i>
+                        </a>
+                    </div>
                 </div>
-                <div class="flex justify-end">
-                    <button class="bg-[var(--primary-color)] hover:bg-[var(--primary-color)]/90 text-white px-8 py-3 rounded-xl text-lg font-semibold transition-all transform hover:scale-110 shadow-lg shadow-[var(--primary-color)]/60">
-                        Post Now
-                    </button>
+                <div class="mt-8 text-center text-gray-500 text-sm">
+                    © 2024 BaddBeatz Production. All rights reserved.
                 </div>
             </div>
-        </div>
-    </section>
+        </footer>
 
-    <!-- Footer -->
-    <footer class="bg-black py-8">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-4 md:mb-0">
-                    <h3 class="orbitron font-bold gradient-text">BaddBeatz</h3>
-                </div>
-            <div class="flex space-x-6">
-                <a href="https://instagram.com/baddbeatz" target="_blank" class="text-white hover:text-[var(--primary-color)] transition-all transform hover:scale-110">
-                    <i class="fab fa-instagram text-xl"></i>
-                </a>
-                <a href="https://twitter.com/baddbeatz" target="_blank" class="text-white hover:text-[var(--primary-color)] transition-all transform hover:scale-110">
-                    <i class="fab fa-twitter text-xl"></i>
-                </a>
-                <a href="https://youtube.com/baddbeatz" target="_blank" class="text-white hover:text-[var(--primary-color)] transition-all transform hover:scale-110">
-                    <i class="fab fa-youtube text-xl"></i>
-                </a>
-                <a href="https://soundcloud.com/baddbeatz" target="_blank" class="text-white hover:text-[var(--primary-color)] transition-all transform hover:scale-110">
-                    <i class="fab fa-soundcloud text-xl"></i>
-                </a>
-            </div>
-            </div>
-            <div class="mt-8 text-center text-gray-500 text-sm">
-                © 2024 BaddBeatz Production. All rights reserved.
-            </div>
-        </div>
-    </footer>
-
-    <!-- JavaScript -->
-    <script>
-        // Add smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Add animations on scroll
-        const observerOptions = {
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-fade-in');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        // Observe all sections
-        document.querySelectorAll('section').forEach(section => {
-            section.classList.add('opacity-0');
-            observer.observe(section);
-        });
-
-        // Add interactive features
-        document.querySelector('.generate-track').addEventListener('click', function() {
-            this.classList.add('animate-pulse');
-            setTimeout(() => {
-                this.classList.remove('animate-pulse');
-            }, 1000);
-        });
-
-        // Mobile menu functionality
-        const mobileMenuButton = document.querySelector('.mobile-menu-button');
-        const mobileMenuClose = document.querySelector('.mobile-menu-close');
-        const mobileMenu = document.querySelector('.mobile-menu');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
-        
-        const toggleMobileMenu = () => {
-            mobileMenu.classList.toggle('active');
-            document.body.classList.toggle('overflow-hidden');
-        };
-
-        // Initialize mobile menu state and prevent body scroll when menu is open
-        if (mobileMenu) {
-            mobileMenu.classList.remove('hidden');
-            
-            // Prevent background scrolling when menu is open
-            const preventScroll = (e) => {
-                if (mobileMenu.classList.contains('active')) {
-                    e.preventDefault();
-                }
-            };
-            
-            document.addEventListener('touchmove', preventScroll, { passive: false });
-            document.addEventListener('wheel', preventScroll, { passive: false });
-        }
-
-        if (mobileMenuButton && mobileMenu) {
-            mobileMenuButton.addEventListener('click', toggleMobileMenu);
-            mobileMenuClose.addEventListener('click', toggleMobileMenu);
-            
-            // Close menu when clicking a link
-            mobileLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    toggleMobileMenu();
-                });
-            });
-
-            // Close menu when pressing Escape key
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
-                    toggleMobileMenu();
-                }
-            });
-
-            // Close menu when clicking outside (but not on the menu button)
-            document.addEventListener('click', (e) => {
-                if (!e.target.closest('.mobile-menu-content') && 
-                    !e.target.closest('.mobile-menu-button') && 
-                    mobileMenu.classList.contains('active')) {
-                    toggleMobileMenu();
-                }
-            });
-
-            // Prevent clicks inside menu from closing it
-            mobileMenu.querySelector('.mobile-menu-content').addEventListener('click', (e) => {
-                e.stopPropagation();
-            });
-        }
-    </script>
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

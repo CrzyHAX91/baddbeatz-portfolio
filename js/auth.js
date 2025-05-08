@@ -28,6 +28,10 @@ const uiConfig = {
             document.getElementById('auth-container').style.display = 'none';
             document.getElementById('app-container').style.display = 'block';
             return false;
+        },
+        signInFailure: (error) => {
+            console.error('Sign-in error:', error);
+            alert('Authentication failed. Please try again.');
         }
     }
 };
